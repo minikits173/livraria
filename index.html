@@ -3,80 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo | Garimpo das Leituras</title>
+    <title>Garimpo das Leituras | Livros Vintage & Raros</title>
     <style>
-        /* Estilo consistente com a página principal */
+        /* Estilos Retrô */
         body {
             font-family: 'Courier New', monospace;
-            background-color: #F5F5DC;
-            color: #4B382A;
+            background-color: #F5F5DC; /* Papel envelhecido */
+            color: #4B382A; /* Marrom escuro */
             margin: 0;
             padding: 0;
         }
-        
+
         header {
-            background-color: #8B4513;
+            background-color: #8B4513; /* Marrom retrô */
             padding: 20px;
             text-align: center;
-            border-bottom: 5px solid #DAA520;
+            border-bottom: 5px solid #DAA520; /* Dourado */
         }
-        
-        .logo a {
+
+        .logo {
             font-family: 'Playfair Display', serif;
             color: #F5F5DC;
-            font-size: 2em;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #F5F5DC;
             text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
-        
-        /* Filtros Retrô */
-        .filtros {
-            background-color: #D2B48C; /* Marrom claro */
-            padding: 15px;
-            margin: 20px auto;
-            width: 80%;
-            border: 2px dashed #8B4513;
-        }
-        
-        /* Grid de Livros */
-        .catalogo {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 25px;
-            padding: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .livro {
-            background: white;
-            border: 1px solid #8B4513;
-            padding: 15px;
+
+        .hero {
+            background: url('https://exemplo.com/livros-antigos.jpg') no-repeat center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            transition: transform 0.3s;
+            position: relative;
         }
-        
-        .livro:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 15px rgba(139, 69, 19, 0.3);
-        }
-        
-        .livro img {
+
+        .hero::before {
+            content: "";
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 250px;
-            object-fit: cover;
+            height: 100%;
+        }
+
+        .hero-text {
+            position: relative;
+            color: #F5F5DC;
+            z-index: 1;
+        }
+
+        .btn {
+            background-color: #A52A2A; /* Vermelho-tijolo */
+            color: #F5F5DC;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 0;
+            border: 2px solid #DAA520;
+        }
+
+        .livros {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .livro-card {
+            background: white;
+            width: 200px;
+            margin: 15px;
+            padding: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid #8B4513;
+            text-align: center;
+        }
+
+        .livro-card img {
+            width: 100%;
+            height: auto;
             border: 1px solid #DAA520;
         }
-        
-        .destaque {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #A52A2A;
-            color: white;
-            padding: 3px 8px;
-            font-size: 0.8em;
+
+        .preco {
+            background-color: #DAA520;
+            color: #4B382A;
+            padding: 5px;
+            font-weight: bold;
+            display: inline-block;
         }
-        
+
         footer {
             background-color: #4B382A;
             color: #F5F5DC;
@@ -87,63 +112,52 @@
     </style>
 </head>
 <body>
-    <!-- Cabeçalho consistente -->
+    <!-- Cabeçalho -->
     <header>
-        <div class="logo">
-            <a href="index.html">Garimpo das Leituras</a>
-        </div>
+        <div class="logo">Garimpo das Leituras</div>
         <nav>
-            <a href="index.html">Início</a>
-            <a href="catalogo.html">Catálogo</a>
+            <a href="#">Início</a>
+            <a href="#">Categorias</a>
             <a href="#">Ofertas</a>
             <a href="#">Blog</a>
+            <a href="#">Contato</a>
         </nav>
     </header>
 
-    <!-- Seção de Filtros -->
-    <section class="filtros">
-        <h2>Filtrar por:</h2>
-        <select>
-            <option>Todos os Gêneros</option>
-            <option>Literatura Clássica</option>
-            <option>Romance Histórico</option>
-            <option>Poesia</option>
-        </select>
-        <select>
-            <option>Qualquer Preço</option>
-            <option>Até R$ 30</option>
-            <option>R$ 30-50</option>
-        </select>
-        <button>Filtrar</button>
+    <!-- Destaque Hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Garimpe histórias esquecidas</h1>
+            <p>Tesouros literários esperam por você!</p>
+            <a href="#" class="btn">Ver Ofertas</a>
+        </div>
     </section>
 
-    <!-- Catálogo de Livros -->
-    <main class="catalogo">
-        <!-- Livro 1 -->
-        <div class="livro">
-            <div class="destaque">RARO</div>
-            <img src="https://via.placeholder.com/150x220?text=Capa+Retrô+1" alt="O Morro dos Ventos">
+    <!-- Livros em Destaque -->
+    <section class="livros">
+        <div class="livro-card">
+            <img src="https://via.placeholder.com/150x220?text=Capa+Livro+1" alt="Livro Retrô">
             <h3>O Morro dos Ventos</h3>
-            <p>Autor: Clara Linhart</p>
-            <p class="preco">R$ 42,90</p>
-            <a href="#" class="btn">Detalhes</a>
+            <p class="preco">R$ 29,90</p>
+            <a href="#" class="btn">Comprar</a>
         </div>
-        
-        <!-- Livro 2 -->
-        <div class="livro">
-            <img src="https://via.placeholder.com/150x220?text=Capa+Retrô+2" alt="A Biblioteca Esquecida">
+        <div class="livro-card">
+            <img src="https://via.placeholder.com/150x220?text=Capa+Livro+2" alt="Livro Retrô">
             <h3>A Biblioteca Esquecida</h3>
-            <p>Autor: Marcos Vilas</p>
-            <p class="preco">R$ 37,50</p>
-            <a href="#" class="btn">Detalhes</a>
+            <p class="preco">R$ 34,90</p>
+            <a href="#" class="btn">Comprar</a>
         </div>
-        
-        <!-- Adicione mais livros conforme necessário -->
-    </main>
+        <div class="livro-card">
+            <img src="https://via.placeholder.com/150x220?text=Capa+Livro+3" alt="Livro Retrô">
+            <h3>Crônicas de Outono</h3>
+            <p class="preco">R$ 27,90</p>
+            <a href="#" class="btn">Comprar</a>
+        </div>
+    </section>
 
     <!-- Rodapé -->
     <footer>
-        <p>Garimpo das Leituras © 2023 - Todos os direitos reservados</p>
+        <p>Desde 2023, garimpando as melhores histórias para você.</p>
     </footer>
 </body>
 </html>
