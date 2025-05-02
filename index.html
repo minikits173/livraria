@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Garimpo das Leituras</title>
+    <style>
+        /* Estilo consistente com a página principal */
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #F5F5DC;
+            color: #4B382A;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #8B4513;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #DAA520;
+        }
+        
+        .logo a {
+            font-family: 'Playfair Display', serif;
+            color: #F5F5DC;
+            font-size: 2em;
+            text-decoration: none;
+        }
+        
+        /* Filtros Retrô */
+        .filtros {
+            background-color: #D2B48C; /* Marrom claro */
+            padding: 15px;
+            margin: 20px auto;
+            width: 80%;
+            border: 2px dashed #8B4513;
+        }
+        
+        /* Grid de Livros */
+        .catalogo {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .livro {
+            background: white;
+            border: 1px solid #8B4513;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .livro:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(139, 69, 19, 0.3);
+        }
+        
+        .livro img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border: 1px solid #DAA520;
+        }
+        
+        .destaque {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #A52A2A;
+            color: white;
+            padding: 3px 8px;
+            font-size: 0.8em;
+        }
+        
+        footer {
+            background-color: #4B382A;
+            color: #F5F5DC;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho consistente -->
+    <header>
+        <div class="logo">
+            <a href="index.html">Garimpo das Leituras</a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="#">Ofertas</a>
+            <a href="#">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Seção de Filtros -->
+    <section class="filtros">
+        <h2>Filtrar por:</h2>
+        <select>
+            <option>Todos os Gêneros</option>
+            <option>Literatura Clássica</option>
+            <option>Romance Histórico</option>
+            <option>Poesia</option>
+        </select>
+        <select>
+            <option>Qualquer Preço</option>
+            <option>Até R$ 30</option>
+            <option>R$ 30-50</option>
+        </select>
+        <button>Filtrar</button>
+    </section>
+
+    <!-- Catálogo de Livros -->
+    <main class="catalogo">
+        <!-- Livro 1 -->
+        <div class="livro">
+            <div class="destaque">RARO</div>
+            <img src="https://via.placeholder.com/150x220?text=Capa+Retrô+1" alt="O Morro dos Ventos">
+            <h3>O Morro dos Ventos</h3>
+            <p>Autor: Clara Linhart</p>
+            <p class="preco">R$ 42,90</p>
+            <a href="#" class="btn">Detalhes</a>
+        </div>
+        
+        <!-- Livro 2 -->
+        <div class="livro">
+            <img src="https://via.placeholder.com/150x220?text=Capa+Retrô+2" alt="A Biblioteca Esquecida">
+            <h3>A Biblioteca Esquecida</h3>
+            <p>Autor: Marcos Vilas</p>
+            <p class="preco">R$ 37,50</p>
+            <a href="#" class="btn">Detalhes</a>
+        </div>
+        
+        <!-- Adicione mais livros conforme necessário -->
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Garimpo das Leituras © 2023 - Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
